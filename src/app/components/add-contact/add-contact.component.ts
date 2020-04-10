@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Contact } from 'src/app/models/contact';
 
 @Component({
   selector: 'app-add-contact',
@@ -7,6 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddContactComponent implements OnInit {
 
+  contact: Contact = {
+    name:'',
+    telephone: 0
+  };
+
+  statutContact: boolean = false;
   constructor() { }
 
   ngOnInit() {

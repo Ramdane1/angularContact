@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ListContactsComponent } from './components/list-contacts/list-contacts.component';
 import { AddContactComponent } from './components/add-contact/add-contact.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AddContactComponent } from './components/add-contact/add-contact.compon
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    FormsModule
   ],
   providers: [
     ContactService
