@@ -1,7 +1,7 @@
 <br>
 <div class="row" *ngIf="statutContact">
     <div class="col s12">
-        <form>
+        <form (ngSubmit)="newContact(contact)">
             <div class="row">
                 <div class="input-field col s6">
                     <i class="fa fa-user prefix"></i>
@@ -16,9 +16,10 @@
                     <label for="">Telephone</label>
                 </div>
             </div>
+            <button class="btn btn-large waves-effect waves-light" type="submit">Submit</button>
          </form>
 
-        <button class="btn btn-large waves-effect waves-light" type="submit">Submit</button>
+       
 
         <p>{{ contact | json }}</p>
     </div>

@@ -1,3 +1,4 @@
+import { ContactService } from './../../services/contact.service';
 import { Component, OnInit } from '@angular/core';
 import { Contact } from 'src/app/models/contact';
 
@@ -10,13 +11,29 @@ export class AddContactComponent implements OnInit {
 
   contact: Contact = {
     name:'',
-    telephone: 0
+    telephone:null
   };
 
+
+  
+
   statutContact: boolean = false;
-  constructor() { }
+  constructor(private ContactService: ContactService) { }
 
   ngOnInit() {
   }
+
+  reset(){
+   this.contact.name = "";
+   this.contact.telephone = null;
+   this.statutContact = false;
+  }
+
+  newContact(){
+    this.ContactService.createContact(this.contact);
+    this.reset();
+  }
+
+
 
 }
